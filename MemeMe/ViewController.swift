@@ -246,8 +246,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
         
-        
-        
+
     }
     
     
