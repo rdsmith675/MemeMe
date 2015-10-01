@@ -14,6 +14,7 @@
 		2BB1C7441BB364B100F01BF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BB1C7421BB364B100F01BF7 /* LaunchScreen.storyboard */; };
 		2BB1C74F1BB364B100F01BF7 /* MemeMeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB1C74E1BB364B100F01BF7 /* MemeMeTests.swift */; };
 		2BB1C75A1BB364B100F01BF7 /* MemeMeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB1C7591BB364B100F01BF7 /* MemeMeUITests.swift */; };
+		2BB1C7681BB9A67E00F01BF7 /* MemeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB1C7671BB9A67E00F01BF7 /* MemeStruct.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		2BB1C7551BB364B100F01BF7 /* MemeMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MemeMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB1C7591BB364B100F01BF7 /* MemeMeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeMeUITests.swift; sourceTree = "<group>"; };
 		2BB1C75B1BB364B100F01BF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2BB1C7671BB9A67E00F01BF7 /* MemeStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeStruct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				2BB1C7391BB364B100F01BF7 /* AppDelegate.swift */,
 				2BB1C73B1BB364B100F01BF7 /* ViewController.swift */,
 				2BB1C73D1BB364B100F01BF7 /* Main.storyboard */,
+				2BB1C7671BB9A67E00F01BF7 /* MemeStruct.swift */,
 				2BB1C7401BB364B100F01BF7 /* Assets.xcassets */,
 				2BB1C7421BB364B100F01BF7 /* LaunchScreen.storyboard */,
 				2BB1C7451BB364B100F01BF7 /* Info.plist */,
@@ -256,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BB1C73C1BB364B100F01BF7 /* ViewController.swift in Sources */,
+				2BB1C7681BB9A67E00F01BF7 /* MemeStruct.swift in Sources */,
 				2BB1C73A1BB364B100F01BF7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
