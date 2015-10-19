@@ -79,8 +79,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         presentViewController(imagePicker, animated: true, completion: nil)
         
         }
+    
         
-       //image picker delegates
+    //image picker delegates
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
                 
              let image = info[UIImagePickerControllerOriginalImage] as? UIImage
@@ -216,16 +218,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     
     @IBAction func shareButtonAction(sender: AnyObject) {
         
-        memeImage = generateMemedImage()
+         memeImage = generateMemedImage()
         
         let activityController = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
         
         
-        
         presentViewController(activityController, animated: true, completion: nil)
-      
-    }
+        
+        activityController.completionWithItemsHandler = {(activity, completed, items, error) in
+            if completed {
+                self.save()
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        
+        }
     
+    }
     
         
     @IBAction func cancelButtonAction(sender: AnyObject) {
