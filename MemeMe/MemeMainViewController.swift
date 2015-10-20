@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeMainViewController.swift
 //  MemeMe
 //
 //  Created by Richard smith on 9/23/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate {
+class MemeMainViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var imagePickerView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
@@ -38,12 +38,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     
 
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(true)
+        super.viewWillAppear(animated)
         
           cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         
-        subscribeToKeyboardNotifications()
-        hideShareButton()
+          subscribeToKeyboardNotifications()
+          hideShareButton()
         
     }
     
@@ -134,7 +134,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     
         if bottomTextField.isFirstResponder() {
         
-        view.frame.origin.y -= getKeyboardHeight(notification)
+        view.frame.origin.y = -getKeyboardHeight(notification)
         }
      }
 
