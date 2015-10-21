@@ -63,7 +63,7 @@ class MemeMainViewController: UIViewController, UIImagePickerControllerDelegate,
         
         presentViewController(imagePicker, animated: true, completion: nil)
         
-        dismissViewControllerAnimated(true, completion: nil)
+    
         
     }
     
