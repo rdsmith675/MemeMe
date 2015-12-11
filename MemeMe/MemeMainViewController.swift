@@ -28,14 +28,10 @@ class MemeMainViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       imagePicker.delegate = self
-        
-        setupTextField(topTextField)
-        setupTextField(bottomTextField)
-        
+            imagePicker.delegate = self
+            setupTextField(topTextField)
+            setupTextField(bottomTextField)
     }
-    
-    
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -63,13 +59,7 @@ class MemeMainViewController: UIViewController, UIImagePickerControllerDelegate,
         
         presentViewController(imagePicker, animated: true, completion: nil)
         
-
-        
     }
-    
-    
-    
-
     
     
     @IBAction func pickAnImage(sender: UIBarButtonItem) {
@@ -79,6 +69,7 @@ class MemeMainViewController: UIViewController, UIImagePickerControllerDelegate,
         presentViewController(imagePicker, animated: true, completion: nil)
         
         }
+  
     
         
     //image picker delegates
@@ -86,7 +77,7 @@ class MemeMainViewController: UIViewController, UIImagePickerControllerDelegate,
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
                 
              let image = info[UIImagePickerControllerOriginalImage] as? UIImage
-        
+    
              imagePickerView.image = image
         
              dismissViewControllerAnimated(true, completion: nil)
@@ -133,8 +124,7 @@ class MemeMainViewController: UIViewController, UIImagePickerControllerDelegate,
     func keyboardWillPopUp(notification: NSNotification) {
     
         if bottomTextField.isFirstResponder() {
-        
-        view.frame.origin.y = -getKeyboardHeight(notification)
+           view.frame.origin.y = -getKeyboardHeight(notification)
         }
      }
 
@@ -170,12 +160,15 @@ class MemeMainViewController: UIViewController, UIImagePickerControllerDelegate,
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
     
-    
-    
-    //save amem 
+    //save Meme
     
     func save() {
         let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, OGImage: imagePickerView.image!, memeImage: memeImage)
+        
+       
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
         
     }
     
@@ -199,9 +192,6 @@ class MemeMainViewController: UIViewController, UIImagePickerControllerDelegate,
     
     }
     
-    
-
-    
 
     
     //meme sharing 
@@ -218,7 +208,7 @@ class MemeMainViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBAction func shareButtonAction(sender: AnyObject) {
         
-         memeImage = generateMemedImage()
+        memeImage = generateMemedImage()
         
         let activityController = UIActivityViewController(activityItems: [memeImage], applicationActivities: nil)
         
@@ -229,6 +219,7 @@ class MemeMainViewController: UIViewController, UIImagePickerControllerDelegate,
             if completed {
                 self.save()
                 self.dismissViewControllerAnimated(true, completion: nil)
+                self.performSegueWithIdentifier("SavedMemeSegue", sender: self)
             }
         
         }
@@ -247,7 +238,6 @@ class MemeMainViewController: UIViewController, UIImagePickerControllerDelegate,
     
     
 }
-
 
 
 
