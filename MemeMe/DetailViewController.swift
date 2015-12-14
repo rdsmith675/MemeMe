@@ -14,6 +14,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     
     var detailMeme: Meme!
     
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         detailImage.image = detailMeme.memeImage
@@ -22,13 +23,22 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     
     }
     override func viewDidLoad() {
-        self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
+        let editButton = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "editMeme:")
+        self.navigationItem.rightBarButtonItem = editButton
+        
+            }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         self.tabBarController?.tabBar.hidden = false
+        
+        
+    }
+    
+    func editMeme(sender: UIBarButtonItem) {
+        performSegueWithIdentifier("memeEditSegue", sender: self)
     }
 
-    
+
+
 }

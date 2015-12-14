@@ -232,6 +232,7 @@ class MemeMainViewController: UIViewController, UIImagePickerControllerDelegate,
         imagePickerView.image = UIImage()
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
+        shareButton.enabled = false
         
 
     }

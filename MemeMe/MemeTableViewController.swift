@@ -23,7 +23,7 @@ class MemeTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-    self.tableView.reloadData()
+    tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -69,7 +69,6 @@ class MemeTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            
             
             tableView.beginUpdates()
             

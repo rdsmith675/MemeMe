@@ -21,7 +21,7 @@ class MemeCollectionViewController: UICollectionViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        self.collectionView!.reloadData()
+        collectionView!.reloadData()
     }
     
     override func viewDidLoad() {
@@ -52,11 +52,9 @@ class MemeCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Collection Meme Cell", forIndexPath: indexPath) as!
         MemeCollectionViewCell
         
-    
         let collectionMeme = self.memes[indexPath.item]
         let imageView = UIImageView(image: collectionMeme.memeImage)
         cell.backgroundView = imageView
-        
         
         return cell
     }
@@ -65,11 +63,9 @@ class MemeCollectionViewController: UICollectionViewController {
         
         performSegueWithIdentifier("NewMemeSegue", sender: self)
         
-
     }
     
-    
-    
+
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         //Grab the DetailVC from Storyboard
